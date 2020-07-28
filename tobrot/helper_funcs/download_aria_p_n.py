@@ -301,9 +301,10 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                     pass
                 #
                 msg = f"\nDownloading File: <code>{downloading_dir_name}</code>\n"
+                msg += f"\n<b>Total Size: {file.total_length_string()}</b>\n"
                 msg += f"\n🚀 : {file.download_speed_string()} 🔽 / {file.upload_speed_string()} 🔼\n"
-                msg += f"\nProgress: {file.progress_string()}\n"
-                msg += f"\nTotal Size: {file.total_length_string()}\n"
+                msg += f"\nProgress: <b>{file.progress_string()}</b>\n"
+                
 
                 if file.seeder is None :
                    msg += f"\n<b>Connections:</b> {file.connections}\n"
